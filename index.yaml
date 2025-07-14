@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  faster-whisper:
+  - apiVersion: v2
+    appVersion: 2.5.0-gpu
+    created: "2025-07-14T15:40:00.796296632-04:00"
+    description: A Helm chart for Kubernetes
+    digest: bb74f292f4557803b263fc5f1d9b3546564939f597d0328c6286de4f0c9bf924
+    name: faster-whisper
+    type: application
+    urls:
+    - https://github.com/guilfoos/helm-charts/charts/faster-whisper-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-07-14T15:40:00.795666404-04:00"
