@@ -47,7 +47,7 @@ ingress:
   enabled: true
   useDefaultIngressClass: true
   hosts:
-    host: faster-whisper.local.guilfoos.com
+    - faster-whisper.local.guilfoos.com
   annotations: 
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
     traefik.ingress.kubernetes.io/router.tls: "true"
