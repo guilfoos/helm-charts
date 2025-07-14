@@ -49,8 +49,7 @@ ingress:
   annotations: 
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
     traefik.ingress.kubernetes.io/router.tls: "true"
-  hosts:
-    - host: faster-whisper.local.guilfoos.com
+  host: faster-whisper.local.guilfoos.com
   tls: 
     - secretName: letsencrypt-wildcard-cert-guilfoos.com
       hosts:
