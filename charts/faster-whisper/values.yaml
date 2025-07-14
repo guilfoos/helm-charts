@@ -45,11 +45,12 @@ service:
 
 ingress:
   enabled: true
-  className: ""
+  useDefaultIngressClass: true
   annotations: 
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
     traefik.ingress.kubernetes.io/router.tls: "true"
-  host: faster-whisper.local.guilfoos.com
+  hosts:
+    - faster-whisper.local.guilfoos.com
   tls: 
     - secretName: letsencrypt-wildcard-cert-guilfoos.com
       hosts:
