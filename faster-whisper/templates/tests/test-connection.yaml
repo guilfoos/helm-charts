@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "faster-whisper.fullname" . }}-test-connection"
+  labels:
+    {{- include "faster-whisper.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "faster-whisper.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
