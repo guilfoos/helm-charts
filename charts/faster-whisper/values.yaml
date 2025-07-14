@@ -52,9 +52,11 @@ ingress:
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
     traefik.ingress.kubernetes.io/router.tls: "true"
   tls: 
-    - secretName: letsencrypt-wildcard-cert-guilfoos.com
-      hosts:
-        - faster-whisper.local.guilfoos.com
+    enabled: true
+    secretName: ""
+  issuer:
+    name: letsencrypt
+    scope: cluster
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
