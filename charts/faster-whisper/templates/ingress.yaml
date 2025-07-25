@@ -29,7 +29,7 @@ spec:
   {{- if .Values.ingress.tls.enabled }}
   tls:
     - hosts:
-      {{- toYaml .Values.app.ingress.hosts | nindent 6 }}
+      {{- toYaml .Values.app.ingress.tls.hosts | nindent 6 }}
       {{- if .Values.app.ingress.tls.secretName }}
       secretName: {{ .Values.app.ingress.tls.secretName }}
       {{- else }}
