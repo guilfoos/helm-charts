@@ -41,24 +41,23 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 10300
+  port: 80
 
 ingress:
-  enabled: true
-  useDefaultIngressClass: true
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
   hosts:
-    - faster-whisper.local.guilfoos.com
-  annotations: 
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    traefik.ingress.kubernetes.io/router.tls: "true"
-  tls: 
-    enabled: true
-    hosts:
-      - faster-whisper.local.guilfoos.com
-    secretName: ""
-  issuer:
-    name: letsencrypt
-    scope: cluster
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -101,13 +100,8 @@ volumeMounts: []
 #   mountPath: "/etc/foo"
 #   readOnly: true
 
-nodeSelector: 
-  nvidia.com/gpu.present: "true"
+nodeSelector: {}
 
 tolerations: []
 
 affinity: {}
-
-extraEnvVars:
-  - name: WHISPER_MODEL
-    value: "tiny-int8"
