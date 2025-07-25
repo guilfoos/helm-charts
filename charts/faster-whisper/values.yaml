@@ -53,6 +53,8 @@ ingress:
     traefik.ingress.kubernetes.io/router.tls: "true"
   tls: 
     enabled: true
+    hosts:
+      - faster-whisper.local.guilfoos.com
     secretName: ""
   issuer:
     name: letsencrypt
