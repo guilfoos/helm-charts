@@ -1,0 +1,31 @@
+name: Release Helm Chart
+
+on:
+  push:
+    branches:
+      - main # or your default branch
+    #tags:
+    #  - 'v*' # Trigger on version tags like v1.0.0
+    paths:
+      - 'charts/**/Chart.yaml'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required for chart-releaser-action
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v1
+        with:
+          version: v3.15.0 # Specify your desired Helm version
+
+      - name: Release Helm Chart
+        uses: helm/chart-releaser-action@v1.7.0 # Use the desired version of the action
+        env:
+          CR_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub Token for authentication
+          CR_GENERATE_RELEASE_NOTES: true
+          CR_SKIP_EXISTING: true
