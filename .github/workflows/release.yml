@@ -29,6 +29,14 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
+      - name: 'Prepare packaging'
+        run: |
+          #!/bin/sh
+          # Fetch current index.yaml
+          CR_INDEX_DIR=.cr-index
+          mkdir "$CR_INDEX_DIR"
+          make pre-fetch DIST="$CR_INDEX_DIR"
+
       - name: Release Helm Chart
         uses: helm/chart-releaser-action@v1.7.0 # Use the desired version of the action
         with:
