@@ -37,7 +37,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-            {{- toYaml .Values.faster-whisper.env | nindent 12 }}
+            {{- toYaml .Values.fasterwhisper.env | nindent 12 }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
