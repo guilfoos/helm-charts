@@ -46,16 +46,3 @@ jobs:
           CR_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub Token for authentication
           CR_GENERATE_RELEASE_NOTES: true
           CR_SKIP_EXISTING: true
-
-      - name: 'Move to upload path'
-        run: |
-          mkdir -p ./dist/charts
-          mv .cr-release-packages/* ./dist/charts
-          make pre-fetch && make index
-          ls -R ./dist/
-          
-      - name: 'Upload Packaged Charts as Artifacts'
-        uses: 'actions/upload-artifact@v4'
-        with:
-          name: 'dist'
-          path: 'dist/'
