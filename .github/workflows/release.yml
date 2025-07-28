@@ -11,7 +11,7 @@ on:
       - 'charts/**/Chart.yaml'
 
 jobs:
-  release:
+  package:
     permissions:
       contents: 'write' # to push chart release and create a release (helm/chart-releaser-action)
     runs-on: ubuntu-latest
@@ -42,8 +42,6 @@ jobs:
 
       - name: Release Helm Chart
         uses: helm/chart-releaser-action@v1.7.0 # Use the desired version of the action
-        with:
-          skip_upload: true
         env:
           CR_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub Token for authentication
           CR_GENERATE_RELEASE_NOTES: true
