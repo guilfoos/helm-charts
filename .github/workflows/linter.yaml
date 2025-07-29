@@ -48,4 +48,4 @@ jobs:
         id: kube-lint-scan-chart
         uses: stackrox/kube-linter-action@v1
         with:
-          directory: charts/${{ matrix.app }}
+          directory: charts/${{ matrix.chart }}
