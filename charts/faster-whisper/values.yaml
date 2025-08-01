@@ -65,7 +65,7 @@ ingressRouteTCP:
     # annotations go here
   entryPoints: {}
     # - web
-  tls: []
+  #tls: []
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
