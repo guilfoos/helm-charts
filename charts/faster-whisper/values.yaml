@@ -59,7 +59,7 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-ingressRoute:
+ingressRouteTCP:
   enabled: false
   annotations: {}
     # annotations go here
