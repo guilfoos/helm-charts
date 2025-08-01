@@ -1,0 +1,40 @@
+{{- if .Values.ingressRoute.enabled -}}
+{{- $fullName := include "faster-whisper.fullname" . -}}
+{{- $svcPort := .Values.service.port -}}
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ $fullName }}
+  labels:
+    {{- include "faster-whisper.labels" . | nindent 4 }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  entryPoints:
+    {{- range .Values.ingressRoute.entryPoints }}
+  tls:
+    {{- range .Values.ingressRoute.tls }}
+    - hosts:
+        {{- range .hosts }}
+        - {{ . | quote }}
+        {{- end }}
+      secretName: {{ .secretName }}
+    {{- end }}
+  {{- end }}
+  routes:
+    {{- range .Values.ingressRoute.routes }}
+    - kind: {{ .kind | quote }}
+      match: {{ .match }}
+      # TODO: add middleware support
+      # TODO: add observability support
+      services:
+        {{- range .Values.ingressRoute.services }}
+        - kind: {{ .kind | quote }}
+          name: {{ .name }}
+          namespace: {{ .namespace | quote }}
+          port: {{ $svcPort }}
+        {{- end }}
+    {{- end }}
+{{- end }}
