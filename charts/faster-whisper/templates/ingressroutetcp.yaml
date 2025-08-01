@@ -23,7 +23,7 @@ spec:
       middlewares: []
       # TODO: add observability support
       services:
-        {{- range .Values.ingressRouteTCP.0.services }}
+        {{- range .services }}
         - kind: {{ .kind | quote }}
           name: {{ .name }}
           namespace: {{ .namespace | quote }}
