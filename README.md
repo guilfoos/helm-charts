@@ -8,3 +8,5 @@ As of right now, there are no working charts in this repo. Additionally, any cha
 
 Charts:
  - faster-whisper. A packaging of the linuxserver gpu-enabled distribution of faster-whisper.
+
+Special thanks to drinkataco, whose [Media-Servarr](https://github.com/drinkataco/media-servarr/) charts served as a source of inspiration for the Github Actions that make this thing work.
