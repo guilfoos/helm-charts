@@ -14,7 +14,7 @@ metadata:
 spec:
   entryPoints:
     {{- range .Values.ingressRouteTCP.entryPoints }}
-    {{- toYaml . | nintent 4 }}
+    - {{ . | quote }}
     {{- end }}
   routes:
     {{- range .Values.ingressRouteTCP.routes }}
