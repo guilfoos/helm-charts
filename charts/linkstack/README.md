@@ -1,5 +1,7 @@
 # FMJ Studios - Linkstack Helm Chart <img src="https://raw.githubusercontent.com/LinkStackOrg/branding/c22886d7585246836d5e4e597484b92b51c76f0c/logo/png/logo.png" alt="Linkstack Logo" width="175" height="175" align="right" loading="lazy"/>
 
+*Copied from fmjstudios/helm to fix a chart bug* -PR has been submitted from my fork, but running this here so I have a working copy
+
 LinkStack provides you with a configurable self-hosted site similar to [Linktree](https://linktr.ee/). Many social
 media platforms only allow you to add one link, with this you can simply link to your LinkStack page and have all the
 links you want displayed on one site. You can share all your links to your social media platform or important links to
