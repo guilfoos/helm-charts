@@ -88,4 +88,27 @@ entries:
     urls:
     - https://github.com/guilfoos/helm-charts/releases/download/linkstack-0.2.3/linkstack-0.2.3.tgz
     version: 0.2.3
-generated: "2025-08-08T17:09:08.279618292Z"
+  searxng:
+  - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2025-08-08T18:16:52.179936368Z"
+    description: Kubito SearXNG Helm Chart
+    digest: 7a2b7c75a8a62fe93670ec74f41a659df738740f8b1ad361e70613dd314f8862
+    home: https://github.com/kubitodev/helm/tree/main/charts/searxng
+    icon: https://kubito.dev/images/kubito.svg
+    keywords:
+    - kubernetes
+    - searxng
+    - metasearch
+    - search
+    - privacy
+    maintainers:
+    - name: kubitodev
+      url: https://kubito.dev
+    name: searxng
+    sources:
+    - https://github.com/searxng/searxng
+    urls:
+    - https://github.com/guilfoos/helm-charts/releases/download/searxng-1.0.7/searxng-1.0.7.tgz
+    version: 1.0.7
+generated: "2025-08-08T18:16:52.179949352Z"
