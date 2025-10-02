@@ -15,7 +15,6 @@ helm install faster-whisper guilfoos-charts/faster-whisper
 Charts:
  - faster-whisper. A packaging of the linuxserver gpu-enabled distribution of faster-whisper.
  - linkace. Experimenting with building charts
- - linkstack. A copy of the chart from [FMJStudios/helm](https://github.com/fmjstudios/helm) to fix a bug while I wait for my pull request to be merged.
  - searxng. Copied from [Kubitodev/helm](https://github.com/kubitodev/helm) to work around a TLS error when trying to pull the chart.
 
 Special thanks to drinkataco, whose [Media-Servarr](https://github.com/drinkataco/media-servarr/) charts served as a source of inspiration for the Github Actions that make this thing work.
