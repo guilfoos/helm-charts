@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   faster-whisper:
   - apiVersion: v2
+    appVersion: 3.0.0
+    created: "2025-10-31T14:55:03.221397376Z"
+    description: A Helm chart for Kubernetes
+    digest: b3ae52dc0db52c32616dcf863629d42d726fa22ab8c0956816d9b995b8b965df
+    name: faster-whisper
+    type: application
+    urls:
+    - https://github.com/guilfoos/helm-charts/releases/download/faster-whisper-1.0.0/faster-whisper-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
     appVersion: 2.5.0
     created: "2025-07-28T01:20:56.490688982Z"
     description: A Helm chart for Kubernetes
@@ -111,4 +121,4 @@ entries:
     urls:
     - https://github.com/guilfoos/helm-charts/releases/download/searxng-1.0.7/searxng-1.0.7.tgz
     version: 1.0.7
-generated: "2025-08-08T18:16:52.179949352Z"
+generated: "2025-10-31T14:55:03.221414539Z"
